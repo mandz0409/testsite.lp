@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PA Christmas Sale 2024</title>
+
+	<!-- Styles -->
+	<style>
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+
+        canvas {
+            position: fixed;
+            background-image: url(https://s.pacn.ws/gallery/large/GA.08555.0003.jpg?soo9vd&v=PX-406);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        .main-container {
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .three-column {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .one-column {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .three-column a img,
+        .two-column a img,
+        .one-column a img {
+            height: auto;
+            display: block;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-right	{
+            text-align: right;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .justify-content-center {
+            justify-content: center;
+        }
+
+        .align-center {
+            align-items: center;
+        }
+
+        .mt-5px {
+            margin-top: 5px;
+        }
+
+        .mt-10px {
+            margin-top: 10px;
+        }
+
+        .mt-20px {
+            margin-top: 20px;
+        }
+
+        .mt-50px {
+            margin-top: 50px;
+        }
+
+        .mb-30px {
+            margin-bottom: 30px;
+        }
+
+        .mb-60px {
+            margin-bottom: 60px;
+        }
+
+        .mb-20px {
+            margin-bottom: 20px;
+        }
+
+        .mb-15px {
+            margin-bottom: 15px;
+        }
+
+        .pb-5 {
+            padding-bottom: 5em;
+        }
+
+        .pb-10 {
+            padding-bottom: 10em;
+        }
+
+        .w-25 {
+            width: 25%;
+        }
+
+        .w-50 {
+            width: 50%;
+        }
+
+        .w-60 {
+            width: 60%;
+        }
+
+        .w-65 {
+            width: 65%;
+        }
+
+        .w-70 {
+            width: 70%;
+        }
+
+        .w-75 {
+            width: 75%;
+        }
+
+        .w-80 {
+            width: 80%;
+        }
+
+        .w-90 {
+            width: 90%;
+        }
+
+        .w-100 {
+            width: 100%;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        .h-auto {
+            height: auto !important;
+        }
+
+        .h-100 {
+            height: 100%;
+        }
+
+        .m-top-banner {
+            margin-top: 10rem;
+        }
+
+        @media (max-width: 425px) {
+            .container main {
+                margin: 0px .5em 0em .5em !important;
+            }
+
+            .m-bot {
+                margin-bottom: 1rem;
+            }
+
+            .m-top-banner {
+                margin-top: 4rem;
+            }
+
+            .three-column a img,
+            .two-column a img {
+                padding: 2px;
+            }
+        }
+
+        @media (min-width: 425px) and (max-width: 768px) {
+            .container main {
+                margin: 0em 2em 0em 2em !important;
+            }
+
+            .m-bot {
+                margin-bottom: 2rem;
+            }
+
+            .m-top-banner {
+                margin-top: 4rem;
+            }
+
+            .three-column a img,
+            .two-column a img {
+                padding: 2px;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .container main {
+                margin: 0px 5em 0em 5em !important;
+            }
+
+            .m-bot {
+                margin-bottom: 2rem;
+            }
+
+            .m-top-banner {
+                margin-top: 4rem;
+            }
+
+            .three-column a img,
+            .two-column a img {
+                padding: 3px;
+            }
+        }
+
+        @media (min-width: 1024px) and (max-width: 1440px) {
+            .container main {
+                margin: 0px 15em 0em 15em !important;
+            }
+
+            .m-bot {
+                margin-bottom: 2.5rem;
+            }
+
+            .m-top-banner {
+                margin-top: 4rem;
+            }
+
+            .three-column a img,
+            .two-column a img {
+                padding: 5px;
+            }
+        }
+
+        @media (min-width: 1440px) and (max-width: 2560px) {
+            .container main {
+                margin: 0px 14em 0em 14em !important;
+            }
+
+            .m-bot {
+                margin-bottom: 2rem;
+            }
+
+            .m-top-banner {
+                margin-top: 4rem;
+            }
+
+            .three-column a img,
+            .two-column a img {
+                padding: 5px;
+            }
+        }
+
+        @media (min-width: 2560px) {
+            .container main {
+                margin: 0px 6em 5em 6em !important;
+            }
+
+            .m-bot {
+                margin-bottom: 3rem;
+            }
+
+            .m-top-banner {
+                margin-top: 6rem;
+            }
+
+            .three-column a img,
+            .two-column a img {
+                padding: 5px;
+            }
+        }
+
+	</style>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<!-- Styles -->
+
+</head>
+
+<body>
+<!-- Container -->
+<canvas id="canvas"></canvas>
+<div class="container" style="max-width: 100%;">
+	<main class="pb-5">
+		<div class="main-container">
+
+			<!--Xmas New Year Banner-->
+			<div class="one-column m-top-banner">
+				<a>
+					<img src="https://s.pacn.ws/gallery/large/GA.08555.0013.png?sooa2c&v=PX-406" class="w-100" alt="XmasSaleBanner" style="margin: 0 auto">
+				</a>
+			</div>
+			<!--Xmas New Year Banner-->
+
+			<!--On sale display-->
+
+			<!--Games display-->
+
+			<div class="one-column">
+				<a>
+					<img src="https://s.pacn.ws/gallery/large/GA.08555.0007.png?soo9vm&v=PX-406" class="w-60" alt="" style="margin: 0 auto">
+				</a>
+			</div>
+
+			<div class="one-column m-bot">
+				<a href="https://www.play-asia.com/search/action%3Dpromotion%3A407" target="_blank" class="">
+					<img src="https://s.pacn.ws/gallery/large/GA.08555.0006.png?soo9vk&v=PX-406" class="w-75" alt="GamesDisplay" style="margin: 0 auto">
+				</a>
+			</div>
+
+			<!--Games display-->
+
+			<!--Toys display-->
+
+			<div class="one-column">
+				<a>
+					<img src="https://s.pacn.ws/gallery/large/GA.08555.0015.png?soohki&v=PX-406" class="w-60" alt="" style="margin: 0 auto">
+				</a>
+			</div>
+
+			<div class="one-column m-bot">
+				<a href="https://www.play-asia.com/search/action%3Dpromotion%3A403" target="_blank" class="">
+					<img src="https://s.pacn.ws/gallery/large/GA.08555.0009.png?soo9vq&v=PX-406" class="w-75" alt="ToysDisplay" style="margin: 0 auto">
+				</a>
+			</div>
+
+			<!--Toys display-->
+
+			<!--Apparel display-->
+
+			<div class="one-column">
+				<a>
+					<img src="https://s.pacn.ws/gallery/large/GA.08555.0010.png?soo9vs&v=PX-406" class="w-60" alt="" style="margin: 0 auto">
+				</a>
+			</div>
+
+			<div class="one-column m-bot">
+				<a href="#" target="_blank" class="">
+					<img src="https://s.pacn.ws/gallery/large/GA.08555.0008.png?soo9vo&v=PX-406" class="w-75" alt="MusicDisplay" style="margin: 0 auto">
+				</a>
+			</div>
+
+			<!--Apparel display-->
+
+			<!--Merch Collectibles display-->
+
+			<div class="one-column">
+				<a>
+					<img src="https://s.pacn.ws/gallery/large/GA.08555.0002.png?soo9vb&v=PX-406" class="w-60" alt="" style="margin: 0 auto">
+				</a>
+			</div>
+
+			<div class="one-column m-bot">
+				<a href="#" target="_blank" class="">
+					<img src="https://s.pacn.ws/gallery/large/GA.08555.0001.png?soo9v9&v=PX-406" class="w-75" alt="AcessoriesDisplay" style="margin: 0 auto">
+				</a>
+			</div>
+
+			<!--Merch Collectibles display-->
+
+			<!--Accessories display-->
+
+			<div class="one-column">
+				<a>
+					<img src="https://s.pacn.ws/gallery/large/GA.08555.0002.png?soo9vb&v=PX-406" class="w-60" alt="" style="margin: 0 auto">
+				</a>
+			</div>
+
+			<div class="one-column m-bot">
+				<a href="https://www.play-asia.com/search/action%3Dpromotion%3A409" target="_blank" class="">
+					<img src="https://s.pacn.ws/gallery/large/GA.08555.0001.png?soo9v9&v=PX-406" class="w-75" alt="AcessoriesDisplay" style="margin: 0 auto">
+				</a>
+			</div>
+
+			<!--Accessories display-->
+
+			<!--Digital display-->
+
+			<div class="one-column">
+				<a>
+					<img src="https://s.pacn.ws/gallery/large/GA.08555.0004.png?soo9vg&v=PX-406" class="w-60" alt="" style="margin: 0 auto">
+				</a>
+			</div>
+
+			<div class="one-column m-bot">
+				<a href="https://www.play-asia.com/search/action%3Dpromotion%3A411" target="_blank" class="">
+					<img src="https://s.pacn.ws/gallery/large/GA.08555.0005.png?soo9vi&v=PX-406" class="w-100" alt="DigitalDisplay" style="margin: 0 auto">
+				</a>
+			</div>
+
+			<!--Digital display-->
+
+		</div>
+	</main>
+</div>
+
+<script>
+	(function() {
+		var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame ||
+			function(callback) {
+				window.setTimeout(callback, 1000 / 60);
+			};
+		window.requestAnimationFrame = requestAnimationFrame;
+	})();
+
+	var flakes = [],
+		canvas = document.getElementById("canvas"),
+		ctx = canvas.getContext("2d"),
+		flakeCount = 400,
+		mX = -100,
+		mY = -100;
+
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+
+	canvas.addEventListener("contextmenu", function(e) {
+		e.preventDefault(); // Disable right-click menu
+	});
+
+	function snow() {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+		for (var i = 0; i < flakeCount; i++) {
+			var flake = flakes[i],
+				x = mX,
+				y = mY,
+				minDist = 150,
+				x2 = flake.x,
+				y2 = flake.y;
+
+			var dist = Math.sqrt((x2 - x) * (x2 - x) + (y2 - y) * (y2 - y)),
+				dx = x2 - x,
+				dy = y2 - y;
+
+			if (dist < minDist) {
+				var force = minDist / (dist * dist),
+					xcomp = (x - x2) / dist,
+					ycomp = (y - y2) / dist,
+					deltaV = force / 2;
+
+				flake.velX -= deltaV * xcomp;
+				flake.velY -= deltaV * ycomp;
+
+			} else {
+				flake.velX *= .98;
+				if (flake.velY <= flake.speed) {
+					flake.velY = flake.speed;
+				}
+				flake.velX += Math.cos(flake.step += .05) * flake.stepSize;
+			}
+
+			ctx.fillStyle = "rgba(255,255,255," + flake.opacity + ")";
+			flake.y += flake.velY;
+			flake.x += flake.velX;
+
+			if (flake.y >= canvas.height || flake.y <= 0) {
+				reset(flake);
+			}
+
+			if (flake.x >= canvas.width || flake.x <= 0) {
+				reset(flake);
+			}
+
+			ctx.beginPath();
+			ctx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
+			ctx.fill();
+		}
+		requestAnimationFrame(snow);
+	}
+
+	function reset(flake) {
+		const scaleFactor = window.innerWidth < 768 ? 0.5 : 1;
+		flake.x = Math.floor(Math.random() * canvas.width);
+		flake.y = 0;
+		flake.size = (Math.random() * 3) + 2;
+		flake.speed = ((Math.random() * 1) + 0.5) * scaleFactor;
+		flake.velY = flake.speed;
+		flake.velX = 0;
+		flake.opacity = (Math.random() * 0.5) + 0.3;
+	}
+
+	function init() {
+		for (var i = 0; i < flakeCount; i++) {
+			var x = Math.floor(Math.random() * canvas.width),
+				y = Math.floor(Math.random() * canvas.height),
+				size = (Math.random() * 3) + 2,
+				speed = (Math.random() * 1) + 0.5,
+				opacity = (Math.random() * 0.5) + 0.3;
+
+			flakes.push({
+				speed: speed,
+				velY: speed,
+				velX: 0,
+				x: x,
+				y: y,
+				size: size,
+				stepSize: (Math.random()) / 70,
+				step: 0,
+				opacity: opacity
+			});
+		}
+
+		snow();
+	}
+
+	canvas.addEventListener("mousemove", function(e) {
+		mX = e.clientX;
+		mY = e.clientY;
+	});
+
+	window.addEventListener("resize", function() {
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+	});
+
+	init();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+		integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Scripts -->
+
+</body>
+
+</html>
+
+
