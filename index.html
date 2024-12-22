@@ -5,9 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>PA Christmas Sale 2024</title>
-
-	<!-- Styles -->
+	<title>Xmas Steam Bundle 2024</title>
 	<style>
         html, body {
             padding: 0;
@@ -21,273 +19,113 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            z-index: 0;
         }
 
         .container {
             position: relative;
             z-index: 1;
+            pointer-events: none;
         }
 
-        .cursor-pointer {
-            cursor: pointer;
+        .container a {
+            pointer-events: auto;
         }
 
-        .main-container {
-            margin: 0 auto;
+        .container main {
+            margin: 0 1em 0 1em;
+        }
+
+        .lp-header a img {
+            width: 80%;
+            margin-top:25%;
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .three-column {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-
-        .two-column {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .one-column {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-        }
-
-        .three-column a img,
-        .two-column a img,
-        .one-column a img {
-            height: auto;
-            display: block;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .text-right	{
-            text-align: right;
-        }
-
-        .d-flex {
-            display: flex;
-        }
-
-        .justify-content-center {
             justify-content: center;
         }
 
-        .align-center {
-            align-items: center;
-        }
-
-        .mt-5px {
-            margin-top: 5px;
-        }
-
-        .mt-10px {
-            margin-top: 10px;
-        }
-
-        .mt-20px {
-            margin-top: 20px;
-        }
-
-        .mt-50px {
-            margin-top: 50px;
-        }
-
-        .mb-30px {
-            margin-bottom: 30px;
-        }
-
-        .mb-60px {
-            margin-bottom: 60px;
-        }
-
-        .mb-20px {
-            margin-bottom: 20px;
-        }
-
-        .mb-15px {
-            margin-bottom: 15px;
-        }
-
-        .pb-5 {
-            padding-bottom: 5em;
-        }
-
-        .pb-10 {
-            padding-bottom: 10em;
-        }
-
-        .w-25 {
-            width: 25%;
-        }
-
-        .w-50 {
-            width: 50%;
-        }
-
-        .w-60 {
-            width: 60%;
-        }
-
-        .w-65 {
-            width: 65%;
-        }
-
-        .w-70 {
-            width: 70%;
-        }
-
-        .w-75 {
-            width: 75%;
-        }
-
-        .w-80 {
-            width: 80%;
-        }
-
-        .w-90 {
-            width: 90%;
-        }
-
-        .w-100 {
+        .grid-section {
             width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: center;
+            margin: 0 auto;
         }
 
-        .d-none {
-            display: none;
+        .grid-section div a img {
+            width: 100%;
+            padding: 5% 10%;
         }
 
-        .h-auto {
-            height: auto !important;
+        .grid-img {
+            transition: transform .8s;
         }
 
-        .h-100 {
-            height: 100%;
+        .grid-img:hover{
+            -ms-transform: scale(1.1); /* IE 9 */
+            -webkit-transform: scale(1.1); /* Safari 3-8 */
+            transform: scale(1.1);
         }
 
-        .m-top-banner {
-            margin-top: 10rem;
+        .lp-footer a img {
+            width: 90%;
+            margin-top: 3%;
+            display: flex;
+            justify-content: center;
         }
 
-        @media (max-width: 425px) {
-            .container main {
-                margin: 0px .5em 0em .5em !important;
-            }
-
-            .m-bot {
-                margin-bottom: 1rem;
-            }
-
-            .m-top-banner {
-                margin-top: 4rem;
-            }
-
-            .three-column a img,
-            .two-column a img {
-                padding: 2px;
-            }
+        .m-0-auto {
+            margin: 0 auto;
         }
 
-        @media (min-width: 425px) and (max-width: 768px) {
-            .container main {
-                margin: 0em 2em 0em 2em !important;
-            }
-
-            .m-bot {
-                margin-bottom: 2rem;
-            }
-
-            .m-top-banner {
-                margin-top: 4rem;
-            }
-
-            .three-column a img,
-            .two-column a img {
-                padding: 2px;
-            }
-        }
-
-        @media (min-width: 768px) and (max-width: 1024px) {
+        @media screen and (min-width: 768px) {
             .container main {
                 margin: 0px 5em 0em 5em !important;
             }
 
-            .m-bot {
-                margin-bottom: 2rem;
-            }
-
-            .m-top-banner {
-                margin-top: 4rem;
-            }
-
-            .three-column a img,
-            .two-column a img {
-                padding: 3px;
+            .lp-header a img {
+                margin-top: 5%;
             }
         }
 
-        @media (min-width: 1024px) and (max-width: 1440px) {
+        @media screen and (min-width: 1024px) {
             .container main {
-                margin: 0px 15em 0em 15em !important;
+                margin: 0px 5em 0em 5em !important;
             }
 
-            .m-bot {
-                margin-bottom: 2.5rem;
+            .lp-header a img {
+                width: 50%;
             }
 
-            .m-top-banner {
-                margin-top: 4rem;
+            .grid-section {
+                width: 60%;
             }
 
-            .three-column a img,
-            .two-column a img {
-                padding: 5px;
+            .lp-footer a img {
+                width: 60%;
             }
         }
 
-        @media (min-width: 1440px) and (max-width: 2560px) {
+        @media screen and (min-width: 1440px) {
             .container main {
-                margin: 0px 14em 0em 14em !important;
-            }
-
-            .m-bot {
-                margin-bottom: 2rem;
-            }
-
-            .m-top-banner {
-                margin-top: 4rem;
-            }
-
-            .three-column a img,
-            .two-column a img {
-                padding: 5px;
+                margin: 0px 8em 0em 8em !important;
             }
         }
 
-        @media (min-width: 2560px) {
+        @media screen and (min-width: 2560px) {
             .container main {
-                margin: 0px 6em 5em 6em !important;
+                margin: 0px 0 5em 0 !important;
             }
 
-            .m-bot {
-                margin-bottom: 3rem;
+            .lp-header a img {
+                width: 70%;
             }
 
-            .m-top-banner {
-                margin-top: 6rem;
+            .grid-section {
+                width: 90%;
             }
 
-            .three-column a img,
-            .two-column a img {
-                padding: 5px;
+            .lp-footer a img {
+                width: 85%;
             }
         }
 
@@ -298,124 +136,43 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-	<!-- Styles -->
-
 </head>
 
 <body>
-<!-- Container -->
 <canvas id="canvas"></canvas>
 <div class="container" style="max-width: 100%;">
-	<main class="pb-5">
-		<div class="main-container">
+	<main>
 
-			<!--Xmas New Year Banner-->
-			<div class="one-column m-top-banner">
-				<a>
-					<img src="https://s.pacn.ws/gallery/large/GA.08555.0013.png?sooa2c&v=PX-406" class="w-100" alt="XmasSaleBanner" style="margin: 0 auto">
-				</a>
-			</div>
-			<!--Xmas New Year Banner-->
-
-			<!--On sale display-->
-
-			<!--Games display-->
-
-			<div class="one-column">
-				<a>
-					<img src="https://s.pacn.ws/gallery/large/GA.08555.0007.png?soo9vm&v=PX-406" class="w-60" alt="" style="margin: 0 auto">
-				</a>
-			</div>
-
-			<div class="one-column m-bot">
-				<a href="https://www.play-asia.com/search/action%3Dpromotion%3A407" target="_blank" class="">
-					<img src="https://s.pacn.ws/gallery/large/GA.08555.0006.png?soo9vk&v=PX-406" class="w-75" alt="GamesDisplay" style="margin: 0 auto">
-				</a>
-			</div>
-
-			<!--Games display-->
-
-			<!--Toys display-->
-
-			<div class="one-column">
-				<a>
-					<img src="https://s.pacn.ws/gallery/large/GA.08555.0015.png?soohki&v=PX-406" class="w-60" alt="" style="margin: 0 auto">
-				</a>
-			</div>
-
-			<div class="one-column m-bot">
-				<a href="https://www.play-asia.com/search/action%3Dpromotion%3A403" target="_blank" class="">
-					<img src="https://s.pacn.ws/gallery/large/GA.08555.0009.png?soo9vq&v=PX-406" class="w-75" alt="ToysDisplay" style="margin: 0 auto">
-				</a>
-			</div>
-
-			<!--Toys display-->
-
-			<!--Apparel display-->
-
-			<div class="one-column">
-				<a>
-					<img src="https://s.pacn.ws/gallery/large/GA.08555.0010.png?soo9vs&v=PX-406" class="w-60" alt="" style="margin: 0 auto">
-				</a>
-			</div>
-
-			<div class="one-column m-bot">
-				<a href="#" target="_blank" class="">
-					<img src="https://s.pacn.ws/gallery/large/GA.08555.0008.png?soo9vo&v=PX-406" class="w-75" alt="MusicDisplay" style="margin: 0 auto">
-				</a>
-			</div>
-
-			<!--Apparel display-->
-
-			<!--Merch Collectibles display-->
-
-			<div class="one-column">
-				<a>
-					<img src="https://s.pacn.ws/gallery/large/GA.08555.0002.png?soo9vb&v=PX-406" class="w-60" alt="" style="margin: 0 auto">
-				</a>
-			</div>
-
-			<div class="one-column m-bot">
-				<a href="#" target="_blank" class="">
-					<img src="https://s.pacn.ws/gallery/large/GA.08555.0001.png?soo9v9&v=PX-406" class="w-75" alt="AcessoriesDisplay" style="margin: 0 auto">
-				</a>
-			</div>
-
-			<!--Merch Collectibles display-->
-
-			<!--Accessories display-->
-
-			<div class="one-column">
-				<a>
-					<img src="https://s.pacn.ws/gallery/large/GA.08555.0002.png?soo9vb&v=PX-406" class="w-60" alt="" style="margin: 0 auto">
-				</a>
-			</div>
-
-			<div class="one-column m-bot">
-				<a href="https://www.play-asia.com/search/action%3Dpromotion%3A409" target="_blank" class="">
-					<img src="https://s.pacn.ws/gallery/large/GA.08555.0001.png?soo9v9&v=PX-406" class="w-75" alt="AcessoriesDisplay" style="margin: 0 auto">
-				</a>
-			</div>
-
-			<!--Accessories display-->
-
-			<!--Digital display-->
-
-			<div class="one-column">
-				<a>
-					<img src="https://s.pacn.ws/gallery/large/GA.08555.0004.png?soo9vg&v=PX-406" class="w-60" alt="" style="margin: 0 auto">
-				</a>
-			</div>
-
-			<div class="one-column m-bot">
-				<a href="https://www.play-asia.com/search/action%3Dpromotion%3A411" target="_blank" class="">
-					<img src="https://s.pacn.ws/gallery/large/GA.08555.0005.png?soo9vi&v=PX-406" class="w-100" alt="DigitalDisplay" style="margin: 0 auto">
-				</a>
-			</div>
-
-			<!--Digital display-->
-
+		<div class="lp-header">
+			<a >
+				<img src="https://s.pacn.ws/gallery/large/GA.08555.0013.png?sooa2c&v=PX-406" class="m-0-auto" alt="lp-header">
+			</a>
 		</div>
+
+		<div class="grid-section">
+			<div class="grid-img">
+				<a href="https://www.play-asia.com/digital/pc_games_3_for_12$/14/712s1#fc=prc:0.0163469626" target="_blank">
+					<img src="https://s.pacn.ws/gallery/large/GA.08555.0011.png?sooa28&v=PX-406" class="" alt="">
+				</a>
+			</div>
+			<div class="grid-img">
+				<a href="https://www.play-asia.com/search/action%3Dpromotion%3A411#fc=prc:0.0161794569" target="_blank">
+					<img src="https://s.pacn.ws/gallery/large/GA.08555.0014.png?sooa2e&v=PX-406" class="" alt="">
+				</a>
+			</div>
+			<div class="grid-img">
+				<a href="https://www.play-asia.com/digital/pc_games_3_for_18$/14/712rv#fc=prc:0.0163469626" target="_blank">
+					<img src="https://s.pacn.ws/gallery/large/GA.08555.0012.png?sooa2a&v=PX-406" class="" alt="">
+				</a>
+			</div>
+		</div>
+
+		<div class="lp-footer">
+			<a>
+				<img src="https://s.pacn.ws/gallery/large/GA.08555.0016.png?sooir4&v=PX-406" class="m-0-auto" alt="lp-header">
+			</a>
+		</div>
+
 	</main>
 </div>
 
@@ -494,11 +251,10 @@
 	}
 
 	function reset(flake) {
-		const scaleFactor = window.innerWidth < 768 ? 0.5 : 1;
 		flake.x = Math.floor(Math.random() * canvas.width);
 		flake.y = 0;
 		flake.size = (Math.random() * 3) + 2;
-		flake.speed = ((Math.random() * 1) + 0.5) * scaleFactor;
+		flake.speed = (Math.random() * 1) + 0.5;
 		flake.velY = flake.speed;
 		flake.velX = 0;
 		flake.opacity = (Math.random() * 0.5) + 0.3;
@@ -519,7 +275,7 @@
 				x: x,
 				y: y,
 				size: size,
-				stepSize: (Math.random()) / 70,
+				stepSize: (Math.random()) / 30,
 				step: 0,
 				opacity: opacity
 			});
@@ -540,14 +296,8 @@
 
 	init();
 </script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
 		integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!-- Scripts -->
-
 </body>
-
 </html>
-
-
